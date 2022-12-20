@@ -1,0 +1,46 @@
+#theme
+
+# Colors
+set $noir	#000000
+set $violet	#4e387e
+set $rouge	#c23b22
+set $bleu	#3a479c
+set $vert 	#0a5f38
+set $vert_pale	#2d8869
+set $saumon 	#e0968b
+set $orange 	#d2691e
+set $jaune 	#eca927
+set $blanc 	#d5d195
+set $marron	#2b1a12
+
+# Background
+output * bg ~/.config/sway/heart-scaled.jpg fit #000000
+#output * bg /home/moi/Documents/theme_gaslamp_killer/bannerfinal.jpg fit #000000
+#output * bg /home/moi/Documents/theme_gaslamp_killer/mdnight_music.jpg center #000000
+
+# TitleBorder - TitleBackground - Text - Indicator - Border
+client.focused $violet $marron $blanc $jaune $rouge
+client.focused_inactive $violet $noir $blanc $orange $vert
+client.unfocused $violet $noir $blanc $saumon $violet
+
+# Titlebar
+title_align center
+titlebar_padding 3
+titlebar_border_thickness 3
+
+# Borders
+set $border_size 7
+default_border pixel $border_size
+default_floating_border pixel $border_size
+smart_borders off
+for_window [app_id=".*"] border pixel $border_size
+
+# Gaps
+gaps inner 0
+gaps outer -5
+gaps bottom 5
+#smart_gaps inverse_outer
+
+# Font
+#font "opendyslexic"
+

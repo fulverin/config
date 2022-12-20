@@ -1,0 +1,21 @@
+### Input configuration
+#
+input * {
+    xkb_layout "gb"
+}
+
+#input Microsoft Surface Type Cover Touchpad {
+input type:touchpad {
+    	tap enabled
+        natural_scroll enabled
+        dwt enabled
+        accel_profile adaptive # (("adaptive"/ "flat")
+        pointer_accel 0 # (between -1 and 1)
+}
+
+#input Microsoft Arc Mouse {
+input type:pointer {
+        accel_profile flat # ("adaptive"/"flat")
+       	pointer_accel -0.5 # (between -1 and 1)
+}
+

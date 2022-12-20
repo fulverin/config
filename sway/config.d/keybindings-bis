@@ -1,0 +1,145 @@
+### Variables
+
+# add menu mod as other mod option
+set $modd Menu
+
+# Home row direction keys
+set $left s
+set $down d
+set $up e
+set $right f
+
+## Key bindings
+
+# Basics:
+
+    # Start a terminal
+    bindsym $modd+Return exec $term
+
+    # Kill focused window
+    bindsym $modd+q kill
+
+    # Start your launcher
+    bindsym $modd+l exec $menu
+
+    # Drag floating windows by holding down $modd and left mouse button.
+    # Resize them with right mouse button + $modd.
+    # Despite the name, also works for non-floating windows.
+    # Change normal to inverse to use left mouse button for resizing and right
+    # mouse button for dragging.
+    #floating_modifier $modd normal
+
+    # Reload the configuration file
+    bindsym $modd+Shift+c reload
+
+    # Exit sway (logs you out of your Wayland session)
+    bindsym $modd+Shift+o exec swaynag -t warning -m 'You pressed the exit shortcut. Do you really want to exit sway? This will end your Wayland session.' -B 'Yes, exit sway' 'swaymsg exit'
+    
+# Moving around:
+
+    # Move your focus around
+    bindsym $modd+$left focus left
+    bindsym $modd+$down focus down
+    bindsym $modd+$up focus up
+    bindsym $modd+$right focus right
+
+    
+    # Or use $modd+[up|down|left|right]
+    bindsym $modd+Left focus left
+    bindsym $modd+Down focus down
+    bindsym $modd+Up focus up
+    bindsym $modd+Right focus right
+
+
+    # Move the focused window with the same, but add Shift
+    bindsym $modd+Shift+$left move left
+    bindsym $modd+Shift+$down move down
+    bindsym $modd+Shift+$up move up
+    bindsym $modd+Shift+$right move right
+
+
+    # Ditto, with arrow keys
+    bindsym $modd+Shift+Left move left
+    bindsym $modd+Shift+Down move down
+    bindsym $modd+Shift+Up move up
+    bindsym $modd+Shift+Right move right
+
+#
+# Workspaces:
+#
+    # Switch to workspace
+    bindsym $modd+1 workspace number 1
+    bindsym $modd+2 workspace number 2
+    bindsym $modd+3 workspace number 3
+    bindsym $modd+4 workspace number 4
+    bindsym $modd+5 workspace number 5
+    bindsym $modd+6 workspace number 6
+    bindsym $modd+7 workspace number 7
+    bindsym $modd+8 workspace number 8
+    bindsym $modd+9 workspace number 9
+    bindsym $modd+0 workspace number 10
+
+    # Move focused container to workspace
+    bindsym $modd+Shift+1 move container to workspace number 1
+    bindsym $modd+Shift+2 move container to workspace number 2
+    bindsym $modd+Shift+3 move container to workspace number 3
+    bindsym $modd+Shift+4 move container to workspace number 4
+    bindsym $modd+Shift+5 move container to workspace number 5
+    bindsym $modd+Shift+6 move container to workspace number 6
+    bindsym $modd+Shift+7 move container to workspace number 7
+    bindsym $modd+Shift+8 move container to workspace number 8
+    bindsym $modd+Shift+9 move container to workspace number 9
+    bindsym $modd+Shift+0 move container to workspace number 10
+
+    # Note: workspaces can have any name you want, not just numbers.    
+#
+# Layout stuff:
+#
+    # You can "split" the current object of your focus with
+    # $modd+b or $modd+v, for horizontal and vertical splits
+    bindsym $modd+b splith
+    bindsym $modd+v splitv
+    
+
+    # Switch the current container between different layout styles
+    # bindsym $modd+p layout stacking
+    # bindsym $modd+w layout tabbed
+    # bindsym $modd+? layout toggle split
+
+    # Make the current focus fullscreen
+    bindsym $modd+g fullscreen
+
+    # Toggle the current focus between tiling and floating mode
+    # bindsym $modd+Shift+Modd4 floating toggle
+
+    # Swap focus between the tiling area and the floating area
+    # bindsym $modd+space focus mode_toggle
+
+    # Move focus to the parent container
+    # bindsym $modd+a focus parent
+#
+# Scratchpad:
+#
+    # Sway has a "scratchpad", which is a bag of holding for windows.
+    # You can send windows there and get them back later.
+
+    # Move the currently focused window to the scratchpad
+    # bindsym $modd+Shift+minus move scratchpad
+
+    # Show the next scratchpad window or hide the focused scratchpad window.
+    # If there are multiple scratchpad windows, this command cycles through them.
+    # bindsym $modd+minus scratchpad show
+#
+# Resizing containers:
+#
+bindsym $modd+r mode "resize"
+
+# default stuff
+
+## Lock Screen
+    bindsym $modd+f1 exec ~/.config/sway/scripts/lockman.sh
+
+# App shortcuts
+#
+    bindsym $modd+n exec thunar
+    bindsym $modd+o exec nyxt
